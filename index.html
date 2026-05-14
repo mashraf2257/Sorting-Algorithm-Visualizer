@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=JetBrains+Mono:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+    darkMode: "class",
+    theme: {
+    extend: {
+    "colors": {
+    "surface-bright": "#37393e",
+    "outline-variant": "#424754",
+    "secondary-container": "#00a572",
+    "on-secondary-container": "#00311f",
+    "on-secondary-fixed": "#002113",
+    "inverse-surface": "#e2e2e8",
+    "surface-container-high": "#282a2e",
+    "tertiary-fixed-dim": "#ffb95f",
+    "surface-container-low": "#1a1c20",
+    "inverse-primary": "#0059c7",
+    "on-surface-variant": "#c2c6d7",
+    "on-tertiary": "#472a00",
+    "background": "#111317",
+    "tertiary-fixed": "#ffddb8",
+    "tertiary-container": "#ca8100",
+    "on-primary": "#002d6d",
+    "secondary": "#4edea3",
+    "on-primary-fixed": "#001944",
+    "on-background": "#e2e2e8",
+    "inverse-on-surface": "#2f3035",
+    "surface-container-highest": "#333539",
+    "on-primary-fixed-variant": "#004299",
+    "surface-dim": "#111317",
+    "outline": "#8c90a0",
+    "primary-container": "#528dff",
+    "surface": "#111317",
+    "primary-fixed": "#d9e2ff",
+    "on-secondary-fixed-variant": "#005236",
+    "on-tertiary-container": "#3e2400",
+    "on-secondary": "#003824",
+    "error": "#ffb4ab",
+    "secondary-fixed": "#6ffbbe",
+    "secondary-fixed-dim": "#4edea3",
+    "surface-container-lowest": "#0c0e12",
+    "on-tertiary-fixed": "#2a1700",
+    "surface-tint": "#afc6ff",
+    "tertiary": "#ffb95f",
+    "primary-fixed-dim": "#afc6ff",
+    "on-surface": "#e2e2e8",
+    "primary": "#afc6ff",
+    "on-primary-container": "#00275f",
+    "on-error-container": "#ffdad6",
+    "on-tertiary-fixed-variant": "#653e00",
+    "surface-variant": "#333539",
+    "surface-container": "#1e2024",
+    "error-container": "#93000a",
+    "on-error": "#690005"
+    },
+    "borderRadius": {
+    "DEFAULT": "0.125rem",
+    "lg": "0.25rem",
+    "xl": "0.5rem",
+    "full": "0.75rem"
+    },
+    "spacing": {
+    "panel-width-sidebar": "320px",
+    "margin-mobile": "16px",
+    "margin-desktop": "32px",
+    "unit": "4px",
+    "gutter": "16px"
+    },
+    "fontFamily": {
+    "headline-md": ["Geist"],
+    "code-sm": ["JetBrains Mono"],
+    "display-lg": ["Geist"],
+    "body-base": ["Geist"],
+    "label-caps": ["JetBrains Mono"],
+    "headline-md-mobile": ["Geist"]
+    },
+    "fontSize": {
+    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+    "code-sm": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+    "body-base": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+    "headline-md-mobile": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+    }
+    },
+    },
+    }
+</script>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-background text-on-background font-body-base antialiased">
+    <!-- TopNavBar -->
+    <header class="bg-background text-primary docked full-width top-0 border-b border-outline-variant flex justify-between items-center w-full px-margin-desktop h-16 fixed z-50">
+        <div class="flex flex-col">
+            <h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">AlgoVis X</h1>
+            <p class="font-code-sm text-[10px] text-on-surface-variant uppercase tracking-widest -mt-1">Design &amp; Analysis of Algorithms Project</p>
+        </div>
+    </header>
+    <!-- SideNavBar (Control Panel) -->
+    <aside class="bg-surface-container-low text-primary docked left-0 h-full w-panel-width-sidebar border-r border-outline-variant flex flex-col fixed left-0 top-16 py-gutter z-40 overflow-y-auto">
+        <div class="px-gutter mb-8">
+            <span class="font-label-caps text-label-caps text-on-surface-variant block mb-1">ALGORITHMS</span>
+            <p class="font-body-base text-xs text-outline mb-4">Select Execution Logic</p>
+            <div class="relative group">
+                <select class="w-full bg-surface-container-lowest border border-outline-variant rounded p-3 text-on-surface font-code-sm appearance-none focus:outline-none focus:border-primary transition-all" id="algorithm-select">
+                    <option value="bubble">Bubble Sort</option>
+                    <option value="selection">Selection Sort</option>
+                    <option value="insertion">Insertion Sort</option>
+                    <option value="merge">Merge Sort</option>
+                    <option value="quick">Quick Sort</option>
+                </select>
+                <div class="absolute right-3 top-3.5 pointer-events-none text-outline">
+                    <span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+                </div>
+            </div>
+        </div>
+        <div class="px-gutter space-y-6 flex-grow">
+            <!-- Parameter Sliders -->
+            <div class="space-y-4">
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="font-label-caps text-label-caps text-on-surface-variant" for="array-size">Array Size</label>
+                    </div>
+                    <input class="w-full bg-surface-container-highest border border-outline-variant rounded p-2 text-on-surface font-code-sm focus:outline-none focus:border-primary transition-all" id="array-size" max="200" min="5" type="number" value="5"/>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center">
+                        <label class="font-label-caps text-label-caps text-on-surface-variant" for="speed-range">Sorting Speed</label>
+                        <span class="material-symbols-outlined text-sm text-outline" data-icon="speed">speed</span>
+                    </div>
+                    <input class="w-full h-1 bg-surface-container-highest rounded-full appearance-none cursor-pointer accent-primary" id="speed-range" max="10" min="1" type="range" value="5"/>
+                    <div class="flex justify-between text-[10px] font-label-caps text-outline">
+                        <span>SLOW</span>
+                        <span>FAST</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Action Buttons -->
+            <div class="space-y-3 pt-4 border-t border-outline-variant">
+                <button class="w-full flex items-center justify-center gap-2 bg-surface-container-high border border-outline-variant hover:bg-surface-bright text-on-surface font-label-caps text-label-caps py-3 transition-all active:scale-95" id="generate-array-btn">
+                    <span class="material-symbols-outlined text-sm" data-icon="refresh">refresh</span>
+                    GENERATE NEW ARRAY
+                </button>
+                <button class="w-full flex items-center justify-center gap-2 bg-secondary-container text-on-secondary-container font-label-caps text-label-caps py-4 font-bold border-l-4 border-secondary hover:brightness-110 transition-all active:scale-95" id="start-btn">
+                    <span class="material-symbols-outlined" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                    RUN SIMULATION
+                </button>
+                <div class="grid grid-cols-2 gap-3">
+                    <button class="flex items-center justify-center gap-2 bg-surface-container-high border border-outline-variant hover:bg-surface-bright text-on-surface font-label-caps text-label-caps py-3 transition-all active:scale-95" id="pause-btn">
+                        <span class="material-symbols-outlined text-sm" data-icon="pause">pause</span>
+                        PAUSE
+                    </button>
+                    <button class="flex items-center justify-center gap-2 bg-surface-container-high border border-outline-variant hover:bg-surface-bright text-on-surface font-label-caps text-label-caps py-3 transition-all active:scale-95" id="reset-btn">
+                        <span class="material-symbols-outlined text-sm" data-icon="restart_alt">restart_alt</span>
+                        RESET
+                    </button>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- Main Content Stage -->
+    <main class="ml-panel-width-sidebar mt-16 p-gutter min-h-[calc(100vh-64px)] flex flex-col gap-gutter">
+        <!-- Stats Cards Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <div class="bg-surface-container-low border border-outline-variant p-4 flex items-center gap-4">
+                <div class="w-12 h-12 flex items-center justify-center bg-primary-container/10 border border-primary-container rounded">
+                    <span class="material-symbols-outlined text-primary-container" data-icon="compare_arrows">compare_arrows</span>
+                </div>
+                <div>
+                    <span class="font-label-caps text-label-caps text-outline block">COMPARISONS</span>
+                    <p class="font-code-sm text-2xl text-on-surface">0,000</p>
+                </div>
+            </div>
+            <div class="bg-surface-container-low border border-outline-variant p-4 flex items-center gap-4">
+                <div class="w-12 h-12 flex items-center justify-center bg-secondary-container/10 border border-secondary-container rounded">
+                    <span class="material-symbols-outlined text-secondary" data-icon="swap_horiz">swap_horiz</span>
+                </div>
+                <div>
+                    <span class="font-label-caps text-label-caps text-outline block">SWAPS / DATA MOVES</span>
+                    <p class="font-code-sm text-2xl text-on-surface">0</p>
+                </div>
+            </div>
+            <div class="bg-surface-container-low border border-outline-variant p-4 flex items-center gap-4">
+                <div class="w-12 h-12 flex items-center justify-center bg-tertiary-container/10 border border-tertiary-container rounded">
+                    <span class="material-symbols-outlined text-tertiary" data-icon="timer">timer</span>
+                </div>
+                <div>
+                    <span class="font-label-caps text-label-caps text-outline block">TIME COMPLEXITY</span>
+                    <p class="font-code-sm text-2xl text-on-surface">O(n²)</p>
+                </div>
+            </div>
+        </div>
+        <!-- Visualization Canvas Area -->
+        <section class="flex-grow bg-surface-container-lowest border border-outline-variant relative overflow-hidden flex flex-col">
+            <div class="border-b border-outline-variant bg-surface-container-low px-4 py-2 flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(78,222,163,0.5)]"></div>
+                    <span class="font-code-sm text-xs text-on-surface-variant">READY TO PROCESS</span>
+                </div>
+                <div class="flex gap-4">
+                    <div class="flex items-center gap-1.5">
+                        <div class="w-3 h-3 bg-outline rounded-sm"></div>
+                        <span class="text-[10px] font-label-caps text-outline">UNSORTED</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                        <div class="w-3 h-3 bg-tertiary rounded-sm"></div>
+                        <span class="text-[10px] font-label-caps text-outline">ACTIVE</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                        <div class="w-3 h-3 bg-secondary rounded-sm"></div>
+                        <span class="text-[10px] font-label-caps text-outline">SORTED</span>
+                    </div>
+                </div>
+            </div>
+            <!-- The actual visualizer container -->
+            <div class="relative flex-grow w-full min-h-[400px]">
+                <div class="absolute inset-0 flex items-end justify-center px-8 pb-8 gap-[2px]" id="array-container">
+                </div>
+            </div>
+    </section>
+</main>
+<script type="module" src="js/main.js"></script>
+</body></html>
