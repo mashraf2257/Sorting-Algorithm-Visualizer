@@ -13,19 +13,19 @@ import {
   resetCounters,
 } from "./core/state.js";
 
-import { bubbleSort,    pseudocode as bubblePseudo,    timeComplexity as bubbleTC    } from "./algorithms/bubbleSort.js";
-import { selectionSort, pseudocode as selectionPseudo, timeComplexity as selectionTC } from "./algorithms/selectionSort.js";
-import { insertionSort, pseudocode as insertionPseudo, timeComplexity as insertionTC } from "./algorithms/insertionSort.js";
-import { mergeSort,     pseudocode as mergePseudo,     timeComplexity as mergeTC     } from "./algorithms/mergeSort.js";
-import { quickSort,     pseudocode as quickPseudo,     timeComplexity as quickTC     } from "./algorithms/quickSort.js";
+import { bubbleSort,    timeComplexity as bubbleTC    } from "./algorithms/bubbleSort.js";
+import { selectionSort, timeComplexity as selectionTC } from "./algorithms/selectionSort.js";
+import { insertionSort, timeComplexity as insertionTC } from "./algorithms/insertionSort.js";
+import { mergeSort,     timeComplexity as mergeTC     } from "./algorithms/mergeSort.js";
+import { quickSort,     timeComplexity as quickTC     } from "./algorithms/quickSort.js";
 
 // --- Algorithm Registry ---
 const ALGORITHMS = {
-  bubble:    { fn: bubbleSort,    pseudo: bubblePseudo,    tc: bubbleTC    },
-  selection: { fn: selectionSort, pseudo: selectionPseudo, tc: selectionTC },
-  insertion: { fn: insertionSort, pseudo: insertionPseudo, tc: insertionTC },
-  merge:     { fn: mergeSort,     pseudo: mergePseudo,     tc: mergeTC     },
-  quick:     { fn: quickSort,     pseudo: quickPseudo,     tc: quickTC     },
+  bubble:    { fn: bubbleSort,    tc: bubbleTC    },
+  selection: { fn: selectionSort, tc: selectionTC },
+  insertion: { fn: insertionSort, tc: insertionTC },
+  merge:     { fn: mergeSort,     tc: mergeTC     },
+  quick:     { fn: quickSort,     tc: quickTC     },
 };
 
 // --- DOM References ---

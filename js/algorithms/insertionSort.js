@@ -30,3 +30,4 @@ export function insertionSort(array) {
 
   return steps;
 }
+export const timeComplexity = "O(n²)";

@@ -1,4 +1,5 @@
 // --- Merge Sort ---
+// Uses "overwrite" steps to reflect the auxiliary-array merge model.
 // Time Complexity: O(n log n) | Space: O(n)
 
 export function mergeSort(array) {
@@ -61,3 +62,4 @@ function merge(arr, left, mid, right, steps) {
     j++; k++;
   }
 }
+export const timeComplexity = "O(n log n)";

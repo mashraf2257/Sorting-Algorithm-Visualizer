@@ -26,3 +26,4 @@ export function bubbleSort(array) {
 
   return steps;
 }
+export const timeComplexity = "O(n²)";

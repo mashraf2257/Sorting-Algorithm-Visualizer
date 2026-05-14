@@ -1,3 +1,4 @@
+// --- Selection Sort ---
 // Time Complexity: O(n²) | Space: O(1)
 
 export function selectionSort(array) {
@@ -30,3 +31,5 @@ export function selectionSort(array) {
 
   return steps;
 }
+
+export const timeComplexity = "O(n²)";

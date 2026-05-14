@@ -1,3 +1,6 @@
+// --- Quick Sort ---
+// Produces step instructions only. No DOM manipulation.
+// Uses Lomuto partition scheme with last element as pivot.
 // Time Complexity: O(n log n) avg | O(n²) worst | Space: O(log n)
 
 export function quickSort(array) {
@@ -47,3 +50,5 @@ function partition(arr, low, high, steps) {
 
   return i + 1;
 }
+
+export const timeComplexity = "O(n log n)";
