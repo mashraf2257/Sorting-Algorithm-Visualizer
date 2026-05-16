@@ -51,4 +51,9 @@ function partition(arr, low, high, steps) {
   return i + 1;
 }
 
-export const timeComplexity = "O(n log n)";
+export const timeComplexity = {
+  best: "O(n log n)",
+  worst: "O(n²)",
+  average: "O(n log n)",
+  space: "O(log n)"
+};

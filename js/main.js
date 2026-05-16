@@ -41,7 +41,12 @@ const resetBtn        = document.getElementById("reset-btn");
 // Stats display elements (located inside the three stat cards)
 const comparisonsEl   = document.querySelectorAll(".font-code-sm.text-2xl")[0];
 const swapsEl         = document.querySelectorAll(".font-code-sm.text-2xl")[1];
-const complexityEl    = document.querySelectorAll(".font-code-sm.text-2xl")[2];
+
+// Complexity display elements
+const complexityBestEl     = document.getElementById("complexity-best");
+const complexityWorstEl    = document.getElementById("complexity-worst");
+const complexityAverageEl  = document.getElementById("complexity-average");
+const complexitySpaceEl    = document.getElementById("complexity-space");
 
 // Canvas status bar
 const statusDotEl     = document.querySelector(".w-2.h-2.rounded-full");
@@ -62,7 +67,10 @@ function speedToDelay(sliderValue) {
 // --- Complexity Update ---
 function updateAlgorithmMeta(key) {
   const algo = ALGORITHMS[key];
-  if (complexityEl) complexityEl.textContent  = algo.tc;
+  if (complexityBestEl) complexityBestEl.textContent = algo.tc.best;
+  if (complexityWorstEl) complexityWorstEl.textContent = algo.tc.worst;
+  if (complexityAverageEl) complexityAverageEl.textContent = algo.tc.average;
+  if (complexitySpaceEl) complexitySpaceEl.textContent = algo.tc.space;
 }
 
 // --- Generate & Render Array ---

@@ -62,4 +62,10 @@ function merge(arr, left, mid, right, steps) {
     j++; k++;
   }
 }
-export const timeComplexity = "O(n log n)";
+
+export const timeComplexity = {
+  best: "O(n log n)",
+  worst: "O(n log n)",
+  average: "O(n log n)",
+  space: "O(n)"
+};

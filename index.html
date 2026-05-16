@@ -187,13 +187,30 @@
                     <p class="font-code-sm text-2xl text-on-surface">0</p>
                 </div>
             </div>
-            <div class="bg-surface-container-low border border-outline-variant p-4 flex items-center gap-4">
-                <div class="w-12 h-12 flex items-center justify-center bg-tertiary-container/10 border border-tertiary-container rounded">
-                    <span class="material-symbols-outlined text-tertiary" data-icon="timer">timer</span>
+            <div class="bg-surface-container-low border border-outline-variant p-4 flex flex-col gap-3">
+                <div class="flex items-center gap-2">
+                    <div class="w-12 h-12 flex items-center justify-center bg-tertiary-container/10 border border-tertiary-container rounded">
+                        <span class="material-symbols-outlined text-tertiary" data-icon="timer">timer</span>
+                    </div>
+                    <span class="font-label-caps text-label-caps text-outline">COMPLEXITY ANALYSIS</span>
                 </div>
-                <div>
-                    <span class="font-label-caps text-label-caps text-outline block">TIME COMPLEXITY</span>
-                    <p class="font-code-sm text-2xl text-on-surface">O(n²)</p>
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <div>
+                        <span class="font-label-caps text-label-caps text-outline block text-[10px]">BEST</span>
+                        <p class="font-code-sm text-on-surface" id="complexity-best">O(n)</p>
+                    </div>
+                    <div>
+                        <span class="font-label-caps text-label-caps text-outline block text-[10px]">WORST</span>
+                        <p class="font-code-sm text-on-surface" id="complexity-worst">O(n²)</p>
+                    </div>
+                    <div>
+                        <span class="font-label-caps text-label-caps text-outline block text-[10px]">AVERAGE</span>
+                        <p class="font-code-sm text-on-surface" id="complexity-average">O(n²)</p>
+                    </div>
+                    <div>
+                        <span class="font-label-caps text-label-caps text-outline block text-[10px]">SPACE</span>
+                        <p class="font-code-sm text-on-surface" id="complexity-space">O(1)</p>
+                    </div>
                 </div>
             </div>
         </div>

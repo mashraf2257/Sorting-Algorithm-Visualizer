@@ -26,4 +26,10 @@ export function bubbleSort(array) {
 
   return steps;
 }
-export const timeComplexity = "O(n²)";
+
+export const timeComplexity = {
+  best: "O(n)",
+  worst: "O(n²)",
+  average: "O(n²)",
+  space: "O(1)"
+};

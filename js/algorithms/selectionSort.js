@@ -32,4 +32,9 @@ export function selectionSort(array) {
   return steps;
 }
 
-export const timeComplexity = "O(n²)";
+export const timeComplexity = {
+  best: "O(n²)",
+  worst: "O(n²)",
+  average: "O(n²)",
+  space: "O(1)"
+};
